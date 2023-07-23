@@ -1,0 +1,2 @@
+ACE_STREAM_VERSION="3.1.75rc4_ubuntu_18.04_x86_64_py3.8"
+DOCKER_REPO="ghcr.io/trexx/acestream"
