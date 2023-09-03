@@ -7,6 +7,9 @@ RUN wget -O - https://download.acestream.media/linux/acestream_${ACE_STREAM_VERS
 FROM python:3.8-slim-bookworm
 LABEL org.opencontainers.image.source https://github.com/trexx/docker-acestream-engine
 
+ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-static /tini-static
+RUN chmod +x /tini-static
+
 COPY --from=downloader --link /tmp /app
 WORKDIR /app
 ENV LD_LIBRARY_PATH "/app/lib"
@@ -14,4 +17,5 @@ ENV LD_LIBRARY_PATH "/app/lib"
 RUN pip install --no-cache-dir -r ./requirements.txt
 
 EXPOSE 6878/tcp
+ENTRYPOINT ["/tini-static", "--"]
 CMD ["/app/acestreamengine", "--client-console"]
