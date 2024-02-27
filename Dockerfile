@@ -9,7 +9,9 @@ RUN rm /tmp/acestream/acestream.conf
 FROM python:3.8-slim-bookworm
 LABEL org.opencontainers.image.source https://github.com/trexx/docker-acestream-engine
 
-ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-static /tini-static
+# renovate: datasource=github-releases depName=krallin/tini
+ENV TINI_VERSION "v0.19.0"
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /tini-static
 RUN chmod +x /tini-static
 
 COPY --from=downloader --link /tmp/acestream /app
