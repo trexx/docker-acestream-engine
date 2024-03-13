@@ -1,4 +1,4 @@
-FROM busybox:1-uclibc@sha256:97e3873d1f61ba651b632e4755fc52e1d90c9f6e4f01d9b720f37af5efed17e5 AS downloader
+FROM busybox:1-uclibc AS downloader
 
 ENV ACE_STREAM_VERSION "3.1.75rc4_ubuntu_18.04_x86_64_py3.8"
 
