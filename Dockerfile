@@ -6,7 +6,7 @@ RUN mkdir /tmp/acestream
 RUN wget -O - https://download.acestream.media/linux/acestream_${ACE_STREAM_VERSION}.tar.gz | tar -xz -C /tmp/acestream
 RUN rm /tmp/acestream/acestream.conf
 
-FROM python:3.10-slim-bookworm@sha256:6af8ee12bd4e73177185a5ad01a85a1bd9dd6a9fe28161c1950ac1f604d51cdf
+FROM python:3.10-slim-bookworm@sha256:4d0756ba223e36e0ce8ee3088e5aeb767d103833273df378f175e841ebb2684e
 LABEL org.opencontainers.image.source https://github.com/trexx/docker-acestream-engine
 
 # renovate: datasource=github-releases depName=krallin/tini
