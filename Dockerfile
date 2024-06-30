@@ -1,12 +1,12 @@
 FROM busybox:1-uclibc AS downloader
 
-ENV ACE_STREAM_VERSION "3.2.3_ubuntu_22.04_x86_64_py3.10"
+ENV ACE_STREAM_VERSION "3.2.3_ubuntu_18.04_x86_64_py3.8"
 
 RUN mkdir /tmp/acestream
 RUN wget -O - https://download.acestream.media/linux/acestream_${ACE_STREAM_VERSION}.tar.gz | tar -xz -C /tmp/acestream
 RUN rm /tmp/acestream/acestream.conf
 
-FROM python:3.10-slim-bookworm@sha256:6af8ee12bd4e73177185a5ad01a85a1bd9dd6a9fe28161c1950ac1f604d51cdf
+FROM python:3.8-slim-bookworm
 LABEL org.opencontainers.image.source https://github.com/trexx/docker-acestream-engine
 
 # renovate: datasource=github-releases depName=krallin/tini
