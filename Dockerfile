@@ -9,7 +9,6 @@ RUN rm /tmp/acestream/acestream.conf
 FROM python:3.13-slim-bookworm@sha256:751d8bece269ba9e672b3f2226050e7e6fb3f3da3408b5dcb5d415a054fcb061
 LABEL org.opencontainers.image.source https://github.com/trexx/docker-acestream-engine
 
-# Download catatonit
 # renovate: datasource=github-releases depName=openSUSE/catatonit
 ENV CATATONIT_VERSION="v0.2.0"
 ADD https://github.com/openSUSE/catatonit/releases/download/${CATATONIT_VERSION}/catatonit.x86_64 /catatonit
