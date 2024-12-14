@@ -10,7 +10,7 @@ FROM python:3.13-slim-bookworm@sha256:f41a75c9cee9391c09e0139f7b49d4b1fbb119944e
 LABEL org.opencontainers.image.source="https://github.com/trexx/docker-acestream-engine"
 
 # renovate: datasource=github-releases depName=openSUSE/catatonit
-ENV CATATONIT_VERSION="v0.2.0"
+ENV CATATONIT_VERSION="v0.2.1"
 ADD https://github.com/openSUSE/catatonit/releases/download/${CATATONIT_VERSION}/catatonit.x86_64 /catatonit
 RUN chmod +x /catatonit
 
