@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    "docker:enableMajor",
     "docker:pinDigests",
     "default:automergeDigest",
     "default:automergeMinor",
@@ -17,6 +18,10 @@
       "matchDepTypes":[
         "stage"
       ]
+    },
+    {
+      "matchPackagePatterns": ["^python$"],
+      "allowedVersions": "3.10"
     }
   ],
   "customManagers": [
