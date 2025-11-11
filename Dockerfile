@@ -1,6 +1,6 @@
 FROM busybox:1-uclibc AS downloader
 
-ENV ACE_STREAM_VERSION="3.2.3_ubuntu_22.04_x86_64_py3.10"
+ENV ACE_STREAM_VERSION="3.2.11_ubuntu_22.04_x86_64_py3.10"
 
 RUN mkdir /tmp/acestream
 RUN wget -O - https://download.acestream.media/linux/acestream_${ACE_STREAM_VERSION}.tar.gz | tar -xz -C /tmp/acestream
