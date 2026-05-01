@@ -11,3 +11,5 @@ jobs:
     permissions:
       contents: read
       packages: write
+    with:
+      prune_images: false
