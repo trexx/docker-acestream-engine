@@ -18,5 +18,4 @@ ENV LD_LIBRARY_PATH="/app/lib"
 
 RUN pip install --no-cache-dir -r ./requirements.txt
 
-EXPOSE 6878/tcp
 ENTRYPOINT ["/catatonit", "--"]
