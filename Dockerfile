@@ -1,12 +1,13 @@
 FROM busybox:1-uclibc AS downloader
 
 ENV ACE_STREAM_VERSION="3.2.11_ubuntu_18.04_x86_64_py3.8"
+# busybox ash: fail the RUN when any command in a pipe fails, not just the last.
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 RUN mkdir /tmp/acestream
 RUN wget -O - https://download.acestream.media/linux/acestream_${ACE_STREAM_VERSION}.tar.gz | tar --exclude="acestream.conf" -xz -C /tmp/acestream
 
 FROM python:3.8-slim-bookworm@sha256:1d52838af602b4b5a831beb13a0e4d073280665ea7be7f69ce2382f29c5a613f
-LABEL org.opencontainers.image.source="https://github.com/trexx/docker-acestream-engine"
 
 # renovate: datasource=github-releases depName=openSUSE/catatonit
 ENV CATATONIT_VERSION="v0.2.1"
